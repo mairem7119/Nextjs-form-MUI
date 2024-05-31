@@ -16,6 +16,8 @@ import { Container } from "@mui/material";
 import InputField from "../Input/InputField";
 import BirtdayField from "../Input/BirtdayField";
 import GenderField from "../Input/GenderField";
+import TextareaAutosize from "@mui/material/TextareaAutosize";
+import TagSelect from "../Input/TagSelect";
 
 export default function MenuAppBar() {
   const [auth, setAuth] = React.useState(true);
@@ -219,7 +221,7 @@ export default function MenuAppBar() {
                   <InputLabel
                     shrink
                     htmlFor="bootstrap-input"
-                    sx={{ fontWeight: "bold"}}
+                    sx={{ fontWeight: "bold" }}
                   >
                     名字カタカナ
                   </InputLabel>
@@ -236,7 +238,7 @@ export default function MenuAppBar() {
                   <InputLabel
                     shrink
                     htmlFor="bootstrap-input"
-                    sx={{ fontWeight: "bold"}}
+                    sx={{ fontWeight: "bold" }}
                   >
                     名前カタカナ
                   </InputLabel>
@@ -476,7 +478,7 @@ export default function MenuAppBar() {
                   <MenuItem value={2}>Microsoft</MenuItem>
                 </Select>
               </FormControl>
-              <Box sx={{display:"flex", justifyContent:"space-between"}}>
+              <Box sx={{ display: "flex", justifyContent: "space-between" }}>
                 <FormControl variant="standard">
                   <InputLabel
                     shrink
@@ -516,17 +518,91 @@ export default function MenuAppBar() {
           </Box>
         </div>
         <div>
-        <Box
+          <Box
             sx={{
               maxWidth: 1152,
               backgroundColor: "#1976D2",
               padding: "10px",
-              marginTop: "30px",
+              marginTop: "20px",
             }}
           >
             <Typography variant="h6" sx={{ color: "white" }}>
-            トレーナー情報
+              トレーナー情報
             </Typography>
+          </Box>
+          <Box sx={{ display: "flex", justifyContent: "space-between" }}>
+            <Box
+              sx={{
+                width: "570px",
+                backgroundColor: "rgb(247,254,255)",
+                padding: "20px",
+              }}
+            >
+              <InputLabel
+                shrink
+                htmlFor="bootstrap-input"
+                sx={{ fontWeight: "bold" }}
+              >
+                編集可能ブランド
+              </InputLabel>
+              <TagSelect />
+              <InputLabel
+                shrink
+                htmlFor="bootstrap-input"
+                sx={{ fontWeight: "bold", marginTop: "10px" }}
+              >
+                編集可能店舗
+              </InputLabel>
+              <TagSelect />
+            </Box>
+            <Box
+              sx={{
+                width: "570px",
+                backgroundColor: "rgb(247,254,255)",
+                padding: "20px",
+              }}
+            >
+              <InputLabel
+                shrink
+                htmlFor="bootstrap-input"
+                sx={{ fontWeight: "bold" }}
+              >
+                備考
+              </InputLabel>
+              <FormControl variant="standard">
+                <TextareaAutosize
+                  aria-label="minimum height"
+                  minRows={5}
+                  placeholder="コメント"
+                  style={{ width: "530px", padding: "10px" }}
+                />
+              </FormControl>
+            </Box>
+          </Box>
+        </div>
+        <div>
+          <Box
+            sx={{
+              width: "1152px",
+              backgroundColor: "rgb(247,254,255)",
+              padding: "20px",
+              marginTop: "20px",
+              display: "flex",
+              justifyContent:"flex-end"
+            }}
+          >
+            <Button
+              variant="contained"
+              sx={{ marginRight: "45px", marginTop: "8px", height: "40px", width:"100px", fontWeight:"bold" }}
+            >
+              登録
+            </Button>
+            <Button
+              variant="outlined"
+              sx={{ marginRight: "45px", marginTop: "8px", height: "40px", width:"120px", fontWeight:"bold" }}
+            >
+              キャンセル
+            </Button>
           </Box>
         </div>
       </Container>

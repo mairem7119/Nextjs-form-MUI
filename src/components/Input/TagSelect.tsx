@@ -1,7 +1,7 @@
 import React from 'react';
 import { Select, MenuItem, Chip, InputLabel, FormControl } from '@mui/material';
 
-function TagSelect() {
+export default function TagSelect() {
   const [selectedTags, setSelectedTags] = React.useState([]);
 
   const handleChange = (event: any) => {
@@ -14,7 +14,6 @@ function TagSelect() {
 
   return (
     <FormControl fullWidth>
-      <InputLabel id="demo-mutiple-chip-label">Tag</InputLabel>
       <Select
         labelId="demo-mutiple-chip-label"
         multiple
@@ -28,7 +27,7 @@ function TagSelect() {
           </div>
         )}
       >
-        {['dịch vụ', 'tiện ích'].map((name) => (
+        {['Akajoy', 'fit365'].map((name) => (
           <MenuItem key={name} value={name}>
             {name}
           </MenuItem>
@@ -37,5 +36,3 @@ function TagSelect() {
     </FormControl>
   );
 }
-
-export default TagSelect;
