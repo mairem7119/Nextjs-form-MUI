@@ -20,7 +20,7 @@ export default function BirtdayField() {
               labelId="demo-simple-select-label"
               id="demo-simple-select"
               defaultValue="1999"
-              sx={{ width: "120px" }}
+              sx={{ width: "120px",  backgroundColor: "#FFFFFF" }}
               size="small"
             >
               <MenuItem>1999</MenuItem>
@@ -45,7 +45,7 @@ export default function BirtdayField() {
               labelId="demo-simple-select-label"
               id="demo-simple-select"
               defaultValue="1999"
-              sx={{ width: "80px" }}
+              sx={{ width: "80px", backgroundColor: "#FFFFFF" }}
               size="small"
             >
               <MenuItem>1</MenuItem>
@@ -71,7 +71,7 @@ export default function BirtdayField() {
               labelId="demo-simple-select-label"
               id="demo-simple-select"
               defaultValue="1999"
-              sx={{ width: "80px" }}
+              sx={{ width: "80px",  backgroundColor: "#FFFFFF" }}
               size="small"
             >
               <MenuItem>13</MenuItem>

@@ -15,6 +15,7 @@ import Button from "@mui/material/Button";
 import { Container } from "@mui/material";
 import InputField from "../Input/InputField";
 import BirtdayField from "../Input/BirtdayField";
+import GenderField from "../Input/GenderField";
 
 export default function MenuAppBar() {
   const [auth, setAuth] = React.useState(true);
@@ -102,10 +103,10 @@ export default function MenuAppBar() {
               個人情報
             </Typography>
           </Box>
-          <Box>
+          <Box sx={{ display: "flex", justifyContent: "space-between" }}>
             <Box
               sx={{
-                maxWidth: "570px",
+                width: "570px",
                 backgroundColor: "rgb(247,254,255)",
                 padding: "20px",
               }}
@@ -185,6 +186,7 @@ export default function MenuAppBar() {
                     size="small"
                     margin="normal"
                     defaultValue="山田"
+                    sx={{ backgroundColor: "#FFFFFF" }}
                   />
                 </FormControl>
                 <FormControl variant="standard">
@@ -201,6 +203,78 @@ export default function MenuAppBar() {
                     size="small"
                     margin="normal"
                     defaultValue="花子"
+                    sx={{ backgroundColor: "#FFFFFF" }}
+                  />
+                </FormControl>
+              </Box>
+              <Box
+                sx={{
+                  display: "flex",
+                  justifyContent: "space-between",
+                  alignItems: "center",
+                  marginTop: "10px",
+                }}
+              >
+                <FormControl variant="standard">
+                  <InputLabel
+                    shrink
+                    htmlFor="bootstrap-input"
+                    sx={{ fontWeight: "bold"}}
+                  >
+                    名字カタカナ
+                  </InputLabel>
+                  <TextField
+                    id="outlined-basic"
+                    variant="outlined"
+                    size="small"
+                    margin="normal"
+                    defaultValue="ヤマダ"
+                    sx={{ backgroundColor: "#FFFFFF" }}
+                  />
+                </FormControl>
+                <FormControl variant="standard">
+                  <InputLabel
+                    shrink
+                    htmlFor="bootstrap-input"
+                    sx={{ fontWeight: "bold"}}
+                  >
+                    名前カタカナ
+                  </InputLabel>
+                  <TextField
+                    id="outlined-basic"
+                    variant="outlined"
+                    size="small"
+                    margin="normal"
+                    defaultValue="ハナコ"
+                    sx={{ backgroundColor: "#FFFFFF" }}
+                  />
+                </FormControl>
+              </Box>
+              <BirtdayField />
+              <Box
+                sx={{
+                  display: "flex",
+                  justifyContent: "space-between",
+                  alignItems: "center",
+                  marginTop: "10px",
+                }}
+              >
+                <GenderField />
+                <FormControl variant="standard">
+                  <InputLabel
+                    shrink
+                    htmlFor="bootstrap-input"
+                    sx={{ fontWeight: "bold" }}
+                  >
+                    携帯電話番号
+                  </InputLabel>
+                  <TextField
+                    id="outlined-basic"
+                    variant="outlined"
+                    size="small"
+                    margin="normal"
+                    defaultValue="032224131"
+                    sx={{ backgroundColor: "#FFFFFF" }}
                   />
                 </FormControl>
               </Box>
@@ -218,14 +292,84 @@ export default function MenuAppBar() {
                     htmlFor="bootstrap-input"
                     sx={{ fontWeight: "bold" }}
                   >
-                    名字カタカナ
+                    電話番号認証コード
                   </InputLabel>
                   <TextField
                     id="outlined-basic"
                     variant="outlined"
                     size="small"
                     margin="normal"
-                    defaultValue="ヤマダ"
+                    placeholder="241421"
+                    disabled={true}
+                    sx={{ backgroundColor: "rgb(227,227,227)", width: "130px" }}
+                  />
+                </FormControl>
+                <Button
+                  variant="contained"
+                  sx={{ marginRight: "45px", marginTop: "8px", height: "40px" }}
+                >
+                  コードを再発行
+                </Button>
+                <FormControl variant="standard">
+                  <InputLabel
+                    shrink
+                    htmlFor="bootstrap-input"
+                    sx={{ fontWeight: "bold" }}
+                  >
+                    電話番号認証コード有効期限
+                  </InputLabel>
+                  <TextField
+                    id="outlined-basic"
+                    variant="outlined"
+                    size="small"
+                    margin="normal"
+                    placeholder="60秒"
+                    disabled={true}
+                    sx={{ backgroundColor: "rgb(227,227,227)" }}
+                  />
+                </FormControl>
+              </Box>
+            </Box>
+            <Box
+              sx={{
+                width: "570px",
+                backgroundColor: "rgb(247,254,255)",
+                padding: "20px",
+              }}
+            >
+              <FormControl variant="standard" sx={{ width: "530px" }}>
+                <InputLabel
+                  shrink
+                  htmlFor="bootstrap-input"
+                  sx={{ fontWeight: "bold" }}
+                >
+                  メールアドレス
+                </InputLabel>
+                <TextField
+                  id="outlined-basic"
+                  variant="outlined"
+                  size="small"
+                  margin="normal"
+                  defaultValue="wonhee@rikkeisoft.com"
+                  sx={{ backgroundColor: "#FFFFFF" }}
+                />
+              </FormControl>
+              <Box sx={{ display: "flex", justifyContent: "space-between" }}>
+                <FormControl variant="standard">
+                  <InputLabel
+                    shrink
+                    htmlFor="bootstrap-input"
+                    sx={{ fontWeight: "bold" }}
+                  >
+                    郵便番号
+                  </InputLabel>
+                  <TextField
+                    id="outlined-basic"
+                    variant="outlined"
+                    size="small"
+                    margin="normal"
+                    defaultValue="460-0017"
+                    sx={{ backgroundColor: "#FFFFFF" }}
                   />
                 </FormControl>
                 <FormControl variant="standard">
@@ -234,21 +378,141 @@ export default function MenuAppBar() {
                     htmlFor="bootstrap-input"
                     sx={{ fontWeight: "bold" }}
                   >
-                    名前カタカナ
+                    都道府県
+                  </InputLabel>
+                  <Select
+                    labelId="demo-simple-select-label"
+                    id="demo-simple-select"
+                    sx={{
+                      border: "1px solid #ced4da",
+                      borderRadius: "3px",
+                      width: "210px",
+                      height: "40px",
+                      marginBottom: "8px",
+                      padding: "5px",
+                      backgroundColor: "#FFFFFF",
+                    }}
+                    defaultValue="愛知県"
+                  >
+                    <MenuItem value={1}>愛知県</MenuItem>
+                    <MenuItem value={2}>愛知県</MenuItem>
+                  </Select>
+                </FormControl>
+              </Box>
+              <FormControl variant="standard" sx={{ width: "530px" }}>
+                <InputLabel
+                  shrink
+                  htmlFor="bootstrap-input"
+                  sx={{ fontWeight: "bold" }}
+                >
+                  市区町村
+                </InputLabel>
+                <TextField
+                  id="outlined-basic"
+                  variant="outlined"
+                  size="small"
+                  margin="normal"
+                  defaultValue="名古屋市中区新栄2丁目"
+                  sx={{ backgroundColor: "#FFFFFF" }}
+                />
+              </FormControl>
+              <FormControl variant="standard" sx={{ width: "530px" }}>
+                <InputLabel
+                  shrink
+                  htmlFor="bootstrap-input"
+                  sx={{ fontWeight: "bold" }}
+                >
+                  番地・号
+                </InputLabel>
+                <TextField
+                  id="outlined-basic"
+                  variant="outlined"
+                  size="small"
+                  margin="normal"
+                  defaultValue="41-7"
+                  sx={{ backgroundColor: "#FFFFFF" }}
+                />
+              </FormControl>
+              <FormControl variant="standard" sx={{ width: "530px" }}>
+                <InputLabel
+                  shrink
+                  htmlFor="bootstrap-input"
+                  sx={{ fontWeight: "bold" }}
+                >
+                  建物名・部屋番号
+                </InputLabel>
+                <TextField
+                  id="outlined-basic"
+                  variant="outlined"
+                  size="small"
+                  margin="normal"
+                  defaultValue="マンションセブンエス２B"
+                  sx={{ backgroundColor: "#FFFFFF" }}
+                />
+              </FormControl>
+              <FormControl variant="standard" sx={{ width: "530px" }}>
+                <InputLabel
+                  shrink
+                  htmlFor="bootstrap-input"
+                  sx={{ fontWeight: "bold" }}
+                >
+                  ログイン元
+                </InputLabel>
+                <Select
+                  labelId="demo-simple-select-label"
+                  id="demo-simple-select"
+                  sx={{
+                    border: "1px solid #ced4da",
+                    borderRadius: "3px",
+                    width: "210px",
+                    height: "40px",
+                    marginBottom: "8px",
+                    padding: "5px",
+                    backgroundColor: "#FFFFFF",
+                  }}
+                  defaultValue="Google"
+                >
+                  <MenuItem value={1}>Google</MenuItem>
+                  <MenuItem value={2}>Microsoft</MenuItem>
+                </Select>
+              </FormControl>
+              <Box sx={{display:"flex", justifyContent:"space-between"}}>
+                <FormControl variant="standard">
+                  <InputLabel
+                    shrink
+                    htmlFor="bootstrap-input"
+                    sx={{ fontWeight: "bold" }}
+                  >
+                    ソーシャルID
                   </InputLabel>
                   <TextField
                     id="outlined-basic"
                     variant="outlined"
                     size="small"
                     margin="normal"
-                    defaultValue="ハナコ"
+                    defaultValue="02381239214"
+                    sx={{ backgroundColor: "#FFFFFF" }}
+                  />
+                </FormControl>
+                <FormControl variant="standard">
+                  <InputLabel
+                    shrink
+                    htmlFor="bootstrap-input"
+                    sx={{ fontWeight: "bold" }}
+                  >
+                    岡本ID
+                  </InputLabel>
+                  <TextField
+                    id="outlined-basic"
+                    variant="outlined"
+                    size="small"
+                    margin="normal"
+                    defaultValue="18231232"
+                    sx={{ backgroundColor: "#FFFFFF" }}
                   />
                 </FormControl>
               </Box>
-              <BirtdayField/>
-              
             </Box>
-            <div></div>
           </Box>
         </div>
       </Container>
