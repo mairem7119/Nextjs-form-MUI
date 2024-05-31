@@ -9,11 +9,12 @@ import MenuIcon from "@mui/icons-material/Menu";
 import AccountCircle from "@mui/icons-material/AccountCircle";
 import MenuItem from "@mui/material/MenuItem";
 import Menu from "@mui/material/Menu";
-import { TextField, InputLabel, FormControl } from "@mui/material";
+import { TextField, InputLabel, FormControl, Select } from "@mui/material";
 import Avatar from "@mui/material/Avatar";
 import Button from "@mui/material/Button";
 import { Container } from "@mui/material";
-import InputField from '../Input/InputField';
+import InputField from "../Input/InputField";
+import BirtdayField from "../Input/BirtdayField";
 
 export default function MenuAppBar() {
   const [auth, setAuth] = React.useState(true);
@@ -122,23 +123,130 @@ export default function MenuAppBar() {
                   display: "flex",
                   justifyContent: "space-between",
                   alignItems: "center",
-                  marginTop: "10px"
+                  marginTop: "10px",
                 }}
               >
-                <InputField lableText={"トレーナーID"} placeHolder= {"1"}/>
-                <InputField lableText={"ユーザー登録情報ステータス"} placeHolder= {"未確定"} />
+                <FormControl variant="standard">
+                  <InputLabel
+                    shrink
+                    htmlFor="bootstrap-input"
+                    sx={{ fontWeight: "bold" }}
+                  >
+                    トレーナーID
+                  </InputLabel>
+                  <TextField
+                    id="outlined-basic"
+                    variant="outlined"
+                    size="small"
+                    margin="normal"
+                    placeholder="1"
+                    disabled={true}
+                    sx={{ backgroundColor: "rgb(227,227,227)", width: "150px" }}
+                  />
+                </FormControl>
+                <FormControl variant="standard">
+                  <InputLabel
+                    shrink
+                    htmlFor="bootstrap-input"
+                    sx={{ fontWeight: "bold" }}
+                  >
+                    ユーザー登録情報ステータス
+                  </InputLabel>
+                  <TextField
+                    id="outlined-basic"
+                    variant="outlined"
+                    size="small"
+                    margin="normal"
+                    placeholder="未確定"
+                    disabled={true}
+                    sx={{ backgroundColor: "rgb(227,227,227)" }}
+                  />
+                </FormControl>
               </Box>
               <Box
                 sx={{
                   display: "flex",
                   justifyContent: "space-between",
                   alignItems: "center",
-                  marginTop: "10px"
+                  marginTop: "10px",
                 }}
               >
-                <InputField lableText={"トレーナーID"} placeHolder= {"1"}/>
-                <InputField lableText={"ユーザー登録情報ステータス"} placeHolder= {"未確定"} />
+                <FormControl variant="standard">
+                  <InputLabel
+                    shrink
+                    htmlFor="bootstrap-input"
+                    sx={{ fontWeight: "bold" }}
+                  >
+                    名字
+                  </InputLabel>
+                  <TextField
+                    id="outlined-basic"
+                    variant="outlined"
+                    size="small"
+                    margin="normal"
+                    defaultValue="山田"
+                  />
+                </FormControl>
+                <FormControl variant="standard">
+                  <InputLabel
+                    shrink
+                    htmlFor="bootstrap-input"
+                    sx={{ fontWeight: "bold" }}
+                  >
+                    名前
+                  </InputLabel>
+                  <TextField
+                    id="outlined-basic"
+                    variant="outlined"
+                    size="small"
+                    margin="normal"
+                    defaultValue="花子"
+                  />
+                </FormControl>
               </Box>
+              <Box
+                sx={{
+                  display: "flex",
+                  justifyContent: "space-between",
+                  alignItems: "center",
+                  marginTop: "10px",
+                }}
+              >
+                <FormControl variant="standard">
+                  <InputLabel
+                    shrink
+                    htmlFor="bootstrap-input"
+                    sx={{ fontWeight: "bold" }}
+                  >
+                    名字カタカナ
+                  </InputLabel>
+                  <TextField
+                    id="outlined-basic"
+                    variant="outlined"
+                    size="small"
+                    margin="normal"
+                    defaultValue="ヤマダ"
+                  />
+                </FormControl>
+                <FormControl variant="standard">
+                  <InputLabel
+                    shrink
+                    htmlFor="bootstrap-input"
+                    sx={{ fontWeight: "bold" }}
+                  >
+                    名前カタカナ
+                  </InputLabel>
+                  <TextField
+                    id="outlined-basic"
+                    variant="outlined"
+                    size="small"
+                    margin="normal"
+                    defaultValue="ハナコ"
+                  />
+                </FormControl>
+              </Box>
+              <BirtdayField/>
+              
             </Box>
             <div></div>
           </Box>
