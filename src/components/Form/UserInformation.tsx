@@ -142,7 +142,7 @@ export default function MenuAppBar() {
                     margin="normal"
                     placeholder="1"
                     disabled={true}
-                    sx={{ backgroundColor: "rgb(227,227,227)", width: "150px" }}
+                    sx={{ backgroundColor: "whitesmoke", width: "150px" }}
                   />
                 </FormControl>
                 <FormControl variant="standard">
@@ -160,7 +160,7 @@ export default function MenuAppBar() {
                     margin="normal"
                     placeholder="未確定"
                     disabled={true}
-                    sx={{ backgroundColor: "rgb(227,227,227)" }}
+                    sx={{ backgroundColor: "whitesmoke" }}
                   />
                 </FormControl>
               </Box>
@@ -301,7 +301,7 @@ export default function MenuAppBar() {
                     margin="normal"
                     placeholder="241421"
                     disabled={true}
-                    sx={{ backgroundColor: "rgb(227,227,227)", width: "130px" }}
+                    sx={{ backgroundColor: "whitesmoke", width: "130px" }}
                   />
                 </FormControl>
                 <Button
@@ -325,7 +325,7 @@ export default function MenuAppBar() {
                     margin="normal"
                     placeholder="60秒"
                     disabled={true}
-                    sx={{ backgroundColor: "rgb(227,227,227)" }}
+                    sx={{ backgroundColor: "whitesmoke" }}
                   />
                 </FormControl>
               </Box>
@@ -513,6 +513,20 @@ export default function MenuAppBar() {
                 </FormControl>
               </Box>
             </Box>
+          </Box>
+        </div>
+        <div>
+        <Box
+            sx={{
+              maxWidth: 1152,
+              backgroundColor: "#1976D2",
+              padding: "10px",
+              marginTop: "30px",
+            }}
+          >
+            <Typography variant="h6" sx={{ color: "white" }}>
+            トレーナー情報
+            </Typography>
           </Box>
         </div>
       </Container>
